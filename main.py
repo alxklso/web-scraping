@@ -37,9 +37,6 @@ def googleMaps():
         maps+= "+" + i
 
     openInChrome(maps)
-    
-def helloGitHub():
-    print("Hello GitHub!")
 
 # main program
 def main():
