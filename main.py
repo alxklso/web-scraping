@@ -29,6 +29,8 @@ def googleSomething():
     openInChrome(google)    # pass google URL through openInChrome function
     
 def googleMaps():
+    # this function takes an address or location as input and searches
+    # it on Google Maps
     url = "http://google.com/maps/place/"
     address = list(input("Please enter an address: ").split())
 
@@ -40,6 +42,8 @@ def googleMaps():
     openInChrome(url)
 
 def checkWeather():
+    # this function takes a location as input and search
+    # for the current weather on Google
     url = "http://google.com/search?q="
     location = list(input("Enter a location to check its weather: ").split())
 
