@@ -6,6 +6,7 @@ def displayMenu():
     print('''
     1. Google something
     2. Search Google Maps
+    3. Check weather
     ''')
 
 def openInChrome(url): 
@@ -28,15 +29,28 @@ def googleSomething():
     openInChrome(google)    # pass google URL through openInChrome function
     
 def googleMaps():
-    maps = "http://google.com/maps/place/"
+    url = "http://google.com/maps/place/"
     address = list(input("Please enter an address: ").split())
 
     # appending words to google url
-    maps += address[0]
+    url += address[0]
     for i in address[1::]:
-        maps+= "+" + i
+        url+= "+" + i
 
-    openInChrome(maps)
+    openInChrome(url)
+
+def checkWeather():
+    url = "http://google.com/search?q="
+    location = list(input("Enter a location to check its weather: ").split())
+
+    # appending location to weather.com ten-day forecast URL
+    url += location[0]
+    for i in location[1::]:
+        url += "+" + i
+    url += "+weather"
+
+    openInChrome(url)
+
 
 # main program
 def main():
@@ -47,6 +61,8 @@ def main():
         googleSomething()
     elif choice == "2":
         googleMaps()
+    elif choice == "3":
+        checkWeather()
 
 # call main
 main()
