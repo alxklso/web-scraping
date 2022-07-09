@@ -79,7 +79,7 @@ def openApp():
     elif choice == '4':
         os.system("open /System/Applications/FaceTime.app")
 
-def downLoadAndSaveWebPage():
+def downloadAndSaveWebPage():
     # this functions attempts to download and save a text file from online
     # if the file doesn't download, an exception is raised. 
     # otherwise the file is written into a text file and saved on the local drive.
@@ -113,7 +113,7 @@ def main():
     elif choice == '4':
         openApp()
     elif choice == '5':
-        downLoadAndSaveWebPage()
+        downloadAndSaveWebPage()
 
 
 # call main
