@@ -1,8 +1,8 @@
 # program for testing basic web scraping capabilities
+
+
 # libraries 
-import webbrowser, sys
-import requests
-import os
+import webbrowser, os, requests
 
 def displayMenu():
     print('''
@@ -10,6 +10,7 @@ def displayMenu():
     2. Search Google Maps
     3. Check weather
     4. Open App
+    5. Download Webpage
     ''')
 
 def openInChrome(url): 
@@ -78,20 +79,41 @@ def openApp():
     elif choice == '4':
         os.system("open /System/Applications/FaceTime.app")
 
+def downLoadAndSaveWebPage():
+    # this functions attempts to download and save a text file from online
+    # if the file doesn't download, an exception is raised. 
+    # otherwise the file is written into a text file and saved on the local drive.
+    req = requests.get('http://automatetheboringstuff.com/files/rj.txt')
+
+    try:
+        req.raise_for_status()
+    except Exception as exc:
+        print('There was a problem: ' + str(exc))
+
+    playFile = open('RomeoAndJuliet.txt', 'wb')
+
+    for chunk in req.iter_content(200000):
+        playFile.write(chunk)
+
+    print("The file was successfully downloaded and saved.")
+    playFile.close()
+
 
 # main program
 def main():
     displayMenu()
     choice = input("Please select an option from the menu: ")
 
-    if choice == "1":
+    if choice == '1':
         googleSomething()
-    elif choice == "2":
+    elif choice == '2':
         googleMaps()
-    elif choice == "3":
+    elif choice == '3':
         checkWeather()
-    elif choice == "4":
+    elif choice == '4':
         openApp()
+    elif choice == '5':
+        downLoadAndSaveWebPage()
 
 
 # call main
