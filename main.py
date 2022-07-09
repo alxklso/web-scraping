@@ -61,6 +61,8 @@ def checkWeather():
     openInChrome(url)
 
 def openApp():
+    # this function allows the user to open an array of apps
+    # on the MacOS
     print('''
     1. Music
     2. Mail
