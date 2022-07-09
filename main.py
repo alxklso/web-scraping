@@ -1,12 +1,17 @@
 # program for testing basic web scraping capabilities
 # libraries 
+from turtle import down
 import webbrowser, sys
+import requests
+import os 
+import subprocess
 
 def displayMenu():
     print('''
     1. Google something
     2. Search Google Maps
     3. Check weather
+    4. Open App
     ''')
 
 def openInChrome(url): 
@@ -55,6 +60,24 @@ def checkWeather():
 
     openInChrome(url)
 
+def openApp():
+    print('''
+    1. Music
+    2. Mail
+    3. Messages
+    4. Discord
+    ''')
+    choice = input("Which app would you like to open? ")
+
+    if choice == '1':
+        os.system("open /System/Applications/Music.app")
+    elif choice == '2':
+        os.system("open /System/Applications/Mail.app")
+    elif choice == '3':
+        os.system("open /System/Applications/Messages.app")
+    elif choice == '4':
+        os.system("open /System/Applications/FaceTime.app")
+
 
 # main program
 def main():
@@ -67,6 +90,9 @@ def main():
         googleMaps()
     elif choice == "3":
         checkWeather()
+    elif choice == "4":
+        openApp()
+
 
 # call main
 main()
