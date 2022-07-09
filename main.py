@@ -1,10 +1,8 @@
 # program for testing basic web scraping capabilities
 # libraries 
-from turtle import down
 import webbrowser, sys
 import requests
-import os 
-import subprocess
+import os
 
 def displayMenu():
     print('''
