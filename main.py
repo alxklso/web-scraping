@@ -66,7 +66,7 @@ def openApp():
     1. Music
     2. Mail
     3. Messages
-    4. Discord
+    4. FaceTime
     ''')
     choice = input("Which app would you like to open? ")
 
