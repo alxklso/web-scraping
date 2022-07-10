@@ -1,4 +1,3 @@
-from distutils.command.install_egg_info import install_egg_info
 from selenium import webdriver
 from selenium.webdriver.support import ui, expected_conditions as EC
 from selenium.webdriver.common.by import By
