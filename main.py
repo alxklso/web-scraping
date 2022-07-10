@@ -12,7 +12,6 @@ def displayMenu():
     3. Check weather
     4. Open App
     5. Download Webpage
-    6. Log into Instagram
     ''')
 
 def openInChrome(url): 
@@ -115,8 +114,6 @@ def main():
         openApp()
     elif choice == '5':
         downloadAndSaveWebPage()
-    elif choice == '6':
-        print('Haven\'t fixed this yet!')
 
 
 # call main
